@@ -60,7 +60,7 @@ const input = [
     regNo: '120',
   },
   {
-    name: 'Louis', //
+    name: 'Louis',
     dob: '1892-08-15T00:00:00.000Z',
     regNo: '022',
   },
