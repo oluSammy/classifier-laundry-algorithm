@@ -5,7 +5,6 @@
  * @returns {any} Trip data analysis
  */
 function getMaxPairs(noOfWashes, cleanPile, dirtyPile) {
-
   // get pairs in clean pile
   const { unpairedNo, totalPair } = findPair(cleanPile);
 
@@ -27,8 +26,6 @@ function getMaxPairs(noOfWashes, cleanPile, dirtyPile) {
     return newTotalPair + totalPair + newTotalPair1;
   }
 }
-
-module.exports = getMaxPairs;
 
 
 // function to find pairs in clean pile
@@ -74,9 +71,8 @@ const findPair = (arr) => {
       unpairedNo.push(el.num);
     }
   });
-  return { copy, pairedNos, unpairedNo, totalPair };
+  return { unpairedNo, totalPair };
 };
-
 
 // function to find pairs in clean pile and dirty pile
 const findCleanPairInDirtyPile = (cleanPile, dirtyPile, noOfWashes) => {
@@ -121,9 +117,8 @@ const findCleanPairInDirtyPile = (cleanPile, dirtyPile, noOfWashes) => {
       unpairedNo.push(el.num);
     }
   });
-  return { washes, newTotalPair, copy, pairedNos, unpairedNo, unpaired };
+  return { washes, newTotalPair, unpairedNo };
 };
-
 
 // function to find pairs in dirty pile
 const findLastPair = (arr, noOfWashes, oldWashes) => {
@@ -166,5 +161,9 @@ const findLastPair = (arr, noOfWashes, oldWashes) => {
       unpairedNo.push(el.num);
     }
   });
-  return { copy, pairedNos, unpairedNo, totalPair };
+  return { totalPair };
 };
+
+console.log()
+
+module.exports = getMaxPairs;
